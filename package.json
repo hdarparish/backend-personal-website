@@ -19,8 +19,10 @@
   },
   "homepage": "https://gitlab.com/hdarparish/backend-personal-website#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "esm": "^3.2.25",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "uuid": "^7.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
