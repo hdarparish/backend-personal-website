@@ -1,6 +1,8 @@
 # Backend personal website
 Instruction:
 To install the dependencies:
+`npm install` to install all the dependencies
+
 `npm install express esm --save` express for API and esm for modules
 `npm install nodemon --save-dev` (optional)
 `npm install dotenv` loads environment vairable from .env
