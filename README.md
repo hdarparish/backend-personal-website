@@ -1,6 +1,22 @@
 # Backend personal website
+**About**
 
-`npm install express esm --save`
-`npm install nodemon --save-dev`
+The backend application wll take the data from the "Contact US" form and check if the values, format are correct before storing into a JSON file. 
 
-`"dev": "nodemon -r esm index.js",`
+**Instruction:**
+
+To install the dependencies:
+`npm install` to install all the dependencies
+
+`npm install express esm --save` express for API and esm for modules
+
+`npm install nodemon --save-dev` (optional) automatically restarts the node
+
+`npm install dotenv` loads environment vairable from .env
+
+`npm install uuid` for universally unique identifier version 4
+
+`npm install jose` for Json web token
+
+
+
