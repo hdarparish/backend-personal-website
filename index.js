@@ -9,6 +9,6 @@ const port = process.env.port || 4000;
 app.use(express.json())
 
 app.get('/', (req, res) => res.send('Hello world'))
-app.use(routes);
+app.use('/contact_form',routes);
 
 app.listen(port, () => console.log(`API server ready on http://localhost:${port}`))
