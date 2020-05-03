@@ -4,19 +4,15 @@
 The backend application wll take the data from the "Contact US" form and check if the values, format are correct before storing into a JSON file. 
 
 **Instruction:**
+.env file requires
+PORT
+DB_ENTRIES_LOCATION
+DB_USERS_LOCATION
+JWT_SECRET
 
 To install the dependencies:
 `npm install` to install all the dependencies
 
-`npm install express esm --save` express for API and esm for modules
-
-`npm install nodemon --save-dev` (optional) automatically restarts the node
-
-`npm install dotenv` loads environment vairable from .env
-
-`npm install uuid` for universally unique identifier version 4
-
-`npm install jose` for Json web token
 
 
 
