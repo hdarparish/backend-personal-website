@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Some Name",
+        "password": "$argon2i$v=19$m=4096,t=3,p=1$Ojzp2E4mZPVdqchkd19OaA$1GfyZ/cM6s1smHoprV9hZFQtrSPGu6F6vujKrqHnmgc",
+        "email": "address@email.com",
+        "id": "a54e78be-6093-4037-8e54-998ad827af0b"
+    },
+    {
+        "name": "Some Name",
+        "password": "$argon2i$v=19$m=4096,t=3,p=1$EYKvgvaUXf091HEs+KBdJg$xp2RzQZDsJH79859bl3BXCRpMpN0C+Yblkhq1EbNXOg",
+        "email": "address@email.com",
+        "id": "ee19c244-bf2e-4fdc-a85e-96cfacbef683"
+    },
+    {
+        "name": "Some Name",
+        "password": "$argon2i$v=19$m=4096,t=3,p=1$HnCLh5gpxz4DEBrD8Yqftw$b2bcXUD6Uqw1c0xUCsXsGub9HbIayb2kBJ6n59JpKZg",
+        "email": "address@email.com",
+        "id": "601c5506-b156-4c86-87f1-80836c72c365"
+    },
+    {
+        "name": "Some Name",
+        "password": "$argon2i$v=19$m=4096,t=3,p=1$bHldlOEgkNwv/43Z4g4oNw$v24tuJiwGNvrPvuvsnArPRHKdSJubOGEH8mKO0BTofI",
+        "email": "address@email.com",
+        "id": "546e69c4-7d04-496a-98f7-e39238fc0f56"
+    },
+    {
+        "name": "Some Name",
+        "password": "$argon2i$v=19$m=4096,t=3,p=1$94jbrcBPrtFETIu1TtfUWQ$NQhaAGM80l87l3UwpgIx4TxNFlfYHrOQfQSLxKgNGrE",
+        "email": "address@email.com",
+        "id": "aa619b1a-ad11-4b60-909d-37d34e9cf362"
+    },
+    {
+        "name": "Some Name",
+        "password": "$argon2i$v=19$m=4096,t=3,p=1$yvK4rupRfV/WwHqACXL6ug$R547Hl1bik2ybvbAfzPx+rY3kfPGxhBG8UdtM4CNYvg",
+        "email": "address@email.com",
+        "id": "9c27b82c-64fc-4123-9a79-7b41435c0127"
+    }
+]
