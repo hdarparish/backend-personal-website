@@ -24,17 +24,13 @@ router.post('/auth', async (request, response, next) => {
         if (index == -1) {
             return response.status(401).send({ message: "incorrect credentials provided" })
         }
-
+        //check if the password hash is the same and sign JWT
         let passwordValid = await argon2.verify(userData[index].password, password);
-
         if (passwordValid) {
-            const token = jwtoken.sign({ email }, process.env.JWT_SECRET, { expiresIn: '1m' })
+            const token = jwtoken.sign({ email }, process.env.JWT_SECRET, { expiresIn: '10m' })
             return response.status(200).send({ token });
         }
-
         return response.status(401).send({ message: "incorrect credentials provided" })
-        //sign and send the token
-
     }
     catch (err) {
         console.error(err);
@@ -43,7 +39,6 @@ router.post('/auth', async (request, response, next) => {
 })
 
 router.get('/contact_form/entries', verifyJwt.verifyToken, async (request, response, next) => {
-    //check token 
     //get the list of entries
     try {
         let entries = await db.getData();
@@ -76,8 +71,7 @@ router.get('/contact_form/entries/:id', verifyJwt.verifyToken, async (request, r
 })
 
 //validate the endpoints below
-//router.use(verifyInput.Validation);
-router.post('/contact_form/entries', verifyInput.Validation, (request, response, next) => {
+router.post('/contact_form/entries', verifyInput.inputValidation, (request, response, next) => {
     try {
         //assign UUID4 and add the data to the JSON file. 
         let reqBody = request.body;
@@ -92,7 +86,7 @@ router.post('/contact_form/entries', verifyInput.Validation, (request, response,
     }
 })
 
-router.post('/users', verifyInput.Validation, async (request, response, next) => {
+router.post('/users', verifyInput.inputValidation, async (request, response, next) => {
     try {
         //assign UUID4 and add the data to the JSON file
         let reqBody = request.body;
