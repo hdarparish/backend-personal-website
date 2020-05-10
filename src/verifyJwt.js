@@ -5,12 +5,12 @@ import * as jwtoken from 'jsonwebtoken'
 
 const verifyToken = (req, res, next) => {
     const authHeader = req.headers['authorization']
-    // Value of the authorization header is typically: "Bearer JWT", hence splitting with empty space and getting second part of the split
-
+   
+    //To remove the Bearer from the JWT
     const token = authHeader && authHeader.split(' ')[1];
 
     if (token == null) {
-        return res.status(400).send({ message: "token not provided" })
+        return res.status(403).send({ message: "token not provided" })
     }
     try {
         const data = jwtoken.verify(token, process.env.JWT_SECRET)
@@ -18,7 +18,7 @@ const verifyToken = (req, res, next) => {
         next()
     } catch (err) {
         console.error(err)
-        return res.status(401).send({ message: err.message })
+        return res.status(403).send({ message: err.message })
     }
 }
 

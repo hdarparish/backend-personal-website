@@ -70,8 +70,8 @@ router.get('/contact_form/entries/:id', verifyJwt.verifyToken, async (request, r
     }
 })
 
-//validate the endpoints below
-router.post('/contact_form/entries', verifyInput.inputValidation, (request, response, next) => {
+router.post('/contact_form/entries', verifyInput.inputValidation(["name", "email", "phoneNumber", "content"])
+            , (request, response, next) => {
     try {
         //assign UUID4 and add the data to the JSON file. 
         let reqBody = request.body;
@@ -86,17 +86,12 @@ router.post('/contact_form/entries', verifyInput.inputValidation, (request, resp
     }
 })
 
-router.post('/users', verifyInput.inputValidation, async (request, response, next) => {
+router.post('/users', verifyInput.inputValidation(["name", "email", "password"]), async (request, response, next) => {
     try {
         //assign UUID4 and add the data to the JSON file
         let reqBody = request.body;
         reqBody.id = uuidv4();
-       /* argon2.hash(reqBody.password).then(hash => {
-            reqBody.password = hash;
-            //pass the string 'users' to change the file location to users.JSON
-           await db.addData(reqBody, 'users');
-
-        })*/
+        //hash the password and add it to the JSON file
         reqBody.password = await argon2.hash(reqBody.password);
         await db.addData(reqBody,'users');
         //delete the password and send back the object

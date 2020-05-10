@@ -1,14 +1,10 @@
 import express, { request, response } from 'express'
 
-const inputValidation = (req, res, next) => {
+const inputValidation = (template) => {
+    return (req, res, next) => {
         let invalid = [];
         let reqBody = req.body;
-        let template = ["name", "email", "phoneNumber", "content"]
 
-        //check if the post method has users in URL and change the template for comparison
-        if (req.path == '/users') {
-            template = ["name", "email", "password"]
-        }
         //check if the password was entered and the length is correct.  NOTE: if the password is null it will be added when the loop checks for every property
         if (reqBody.password != null && reqBody.password.length < 8) {
             invalid.push("Password must be minimum 8 characters")
@@ -32,8 +28,8 @@ const inputValidation = (req, res, next) => {
             return res.status(400).send({ message: 'validation error', invalid })
         }
         next();
-};
-
+    };
+}
 export {
     inputValidation
 }

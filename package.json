@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node -r esm index.js",
     "dev": "nodemon -r esm --ignore *.json index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -r esm --exit"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,9 @@
     "uuid": "^7.0.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "mocha": "^7.1.2",
+    "nodemon": "^2.0.3",
+    "should": "^13.2.3",
+    "supertest": "^4.0.2"
   }
 }
