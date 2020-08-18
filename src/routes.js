@@ -11,7 +11,7 @@ dotenv.config();
 const router = express.Router()
 
 router.post('/auth', async (request, response, next) => {
-    let email = request.body.email;
+    let email = request.body.username;
     let password = request.body.password;
     //check if the propetry is empty
     if (email == null || password == null) {
@@ -89,6 +89,7 @@ router.post('/contact_form/entries', verifyInput.inputValidation(["name", "email
 router.post('/users', verifyInput.inputValidation(["name", "email", "password"]), async (request, response, next) => {
     try {
         //assign UUID4 and add the data to the JSON file
+        console.log("success")
         let reqBody = request.body;
         reqBody.id = uuidv4();
         //hash the password and add it to the JSON file

@@ -1,13 +1,14 @@
 import express from 'express'
 import * as dotenv from 'dotenv'
 import routes from "./src/routes.js"
+import cors from 'cors'
 dotenv.config();
 
 const app = express()
 const port = process.env.port || 4000;
 // parse json 
 app.use(express.json())
-
+app.use(cors());
 app.use('/', routes);
 
 //global error handler

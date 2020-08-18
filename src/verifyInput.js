@@ -5,6 +5,7 @@ const inputValidation = (template) => {
         let invalid = [];
         let reqBody = req.body;
 
+        console.log(req.body)
         //check if the password was entered and the length is correct.  NOTE: if the password is null it will be added when the loop checks for every property
         if (reqBody.password != null && reqBody.password.length < 8) {
             invalid.push("Password must be minimum 8 characters")
